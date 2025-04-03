@@ -19,13 +19,13 @@ android {
         applicationId "org.lapuente.newpipe3"
         resValue "string", "app_name", "NewPipe3"
         minSdk 21
-        targetSdk 33
+        targetSdk 34
         if (System.properties.containsKey('versionCodeOverride')) {
             versionCode System.getProperty('versionCodeOverride') as Integer
         } else {
-            versionCode 1010
+            versionCode 1016
         }
-        versionName "0.27.6"
+        versionName "0.27.16"
         if (System.properties.containsKey('versionNameSuffix')) {
             versionNameSuffix System.getProperty('versionNameSuffix')
         }
