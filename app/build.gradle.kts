@@ -39,7 +39,7 @@ configure<ApplicationExtension> {
     namespace = "org.schabi.newpipe"
 
     defaultConfig {
-        applicationId = "org.lapuente.newpipe2"
+        applicationId = "org.lapuente.newpipe3"
         resValue("string", "app_name", "NewPipe2")
         minSdk = 21
         targetSdk = 35
