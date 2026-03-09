@@ -40,7 +40,7 @@ configure<ApplicationExtension> {
 
     defaultConfig {
         applicationId = "org.lapuente.newpipe3"
-        resValue("string", "app_name", "NewPipe2")
+        resValue("string", "app_name", "NewPipe Lapuente")
         minSdk = 21
         targetSdk = 35
 
