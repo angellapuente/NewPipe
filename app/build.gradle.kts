@@ -39,12 +39,12 @@ configure<ApplicationExtension> {
     namespace = "org.schabi.newpipe"
 
     defaultConfig {
-        applicationId = "org.lapuente.newpipe3"
+        applicationId = "org.lapuente.newpipelapuente"
         resValue("string", "app_name", "NewPipe Lapuente")
         minSdk = 21
         targetSdk = 35
 
-        versionCode = System.getProperty("versionCodeOverride")?.toInt() ?: 1008
+        versionCode = System.getProperty("versionCodeOverride")?.toInt() ?: 1013
 
         versionName = "0.28.3"
         System.getProperty("versionNameSuffix")?.let { versionNameSuffix = it }
@@ -78,8 +78,8 @@ configure<ApplicationExtension> {
                 applicationIdSuffix = suffix
                 resValue("string", "app_name", "NewPipe $suffix")
             }
-            isMinifyEnabled = true
-            isShrinkResources = true
+            isMinifyEnabled = false
+            isShrinkResources = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"

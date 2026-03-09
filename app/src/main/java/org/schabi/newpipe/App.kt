@@ -72,7 +72,7 @@ open class App :
 
     override fun attachBaseContext(base: Context?) {
         super.attachBaseContext(base)
-        initACRA()
+       // initACRA()
     }
 
     override fun onCreate() {
@@ -210,7 +210,7 @@ open class App :
                     Thread
                         .currentThread()
                         .uncaughtExceptionHandler
-                        .uncaughtException(Thread.currentThread(), throwable)
+                        ?.uncaughtException(Thread.currentThread(), throwable)
                 }
             }
         )
