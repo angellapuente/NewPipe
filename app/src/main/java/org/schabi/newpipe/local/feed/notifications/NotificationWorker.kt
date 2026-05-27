@@ -93,7 +93,7 @@ class NotificationWorker(
     companion object {
 
         private val TAG = NotificationWorker::class.java.simpleName
-        private const val WORK_TAG = App.PACKAGE_NAME + "_streams_notifications"
+        private val WORK_TAG = App.PACKAGE_NAME + "_streams_notifications"
 
         private fun areNotificationsEnabled(context: Context) = NotificationHelper.areNewStreamsNotificationsEnabled(context) &&
             NotificationHelper.areNotificationsEnabledOnDevice(context)

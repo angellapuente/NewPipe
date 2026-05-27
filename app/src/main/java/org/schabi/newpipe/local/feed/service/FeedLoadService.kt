@@ -48,7 +48,7 @@ class FeedLoadService : Service() {
     companion object {
         private val TAG = FeedLoadService::class.java.simpleName
         const val NOTIFICATION_ID = 7293450
-        private const val ACTION_CANCEL = App.PACKAGE_NAME + ".local.feed.service.FeedLoadService.CANCEL"
+        private val ACTION_CANCEL = App.PACKAGE_NAME + ".local.feed.service.FeedLoadService.CANCEL"
 
         /**
          * How often the notification will be updated.

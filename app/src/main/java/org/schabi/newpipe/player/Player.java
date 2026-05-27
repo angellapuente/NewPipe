@@ -808,45 +808,33 @@ public final class Player implements PlaybackListener, Listener {
             Log.d(TAG, "onBroadcastReceived() called with: intent = [" + intent + "]");
         }
 
-        switch (intent.getAction()) {
-            case AudioManager.ACTION_AUDIO_BECOMING_NOISY:
-                pause();
-                break;
-            case ACTION_CLOSE:
-                service.destroyPlayerAndStopService();
-                break;
-            case ACTION_PLAY_PAUSE:
-                playPause();
-                break;
-            case ACTION_PLAY_PREVIOUS:
-                playPrevious();
-                break;
-            case ACTION_PLAY_NEXT:
-                playNext();
-                break;
-            case ACTION_FAST_REWIND:
-                fastRewind();
-                break;
-            case ACTION_FAST_FORWARD:
-                fastForward();
-                break;
-            case ACTION_REPEAT:
-                cycleNextRepeatMode();
-                break;
-            case ACTION_SHUFFLE:
-                toggleShuffleModeEnabled();
-                break;
-            case Intent.ACTION_SCREEN_OFF:
-                screenOn = false;
-                break;
-            case Intent.ACTION_SCREEN_ON:
-                screenOn = true;
-                break;
-            case Intent.ACTION_CONFIGURATION_CHANGED:
-                if (DEBUG) {
-                    Log.d(TAG, "ACTION_CONFIGURATION_CHANGED received");
-                }
-                break;
+        final String action = intent.getAction();
+        if (AudioManager.ACTION_AUDIO_BECOMING_NOISY.equals(action)) {
+            pause();
+        } else if (ACTION_CLOSE.equals(action)) {
+            service.destroyPlayerAndStopService();
+        } else if (ACTION_PLAY_PAUSE.equals(action)) {
+            playPause();
+        } else if (ACTION_PLAY_PREVIOUS.equals(action)) {
+            playPrevious();
+        } else if (ACTION_PLAY_NEXT.equals(action)) {
+            playNext();
+        } else if (ACTION_FAST_REWIND.equals(action)) {
+            fastRewind();
+        } else if (ACTION_FAST_FORWARD.equals(action)) {
+            fastForward();
+        } else if (ACTION_REPEAT.equals(action)) {
+            cycleNextRepeatMode();
+        } else if (ACTION_SHUFFLE.equals(action)) {
+            toggleShuffleModeEnabled();
+        } else if (Intent.ACTION_SCREEN_OFF.equals(action)) {
+            screenOn = false;
+        } else if (Intent.ACTION_SCREEN_ON.equals(action)) {
+            screenOn = true;
+        } else if (Intent.ACTION_CONFIGURATION_CHANGED.equals(action)) {
+            if (DEBUG) {
+                Log.d(TAG, "ACTION_CONFIGURATION_CHANGED received");
+            }
         }
 
         UIs.call(playerUi -> playerUi.onBroadcastReceived(intent));
