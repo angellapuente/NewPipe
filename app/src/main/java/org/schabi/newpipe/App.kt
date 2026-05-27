@@ -72,7 +72,7 @@ open class App :
 
     override fun attachBaseContext(base: Context?) {
         super.attachBaseContext(base)
-        initACRA()
+        // initACRA()
     }
 
     override fun onCreate() {
@@ -283,7 +283,8 @@ open class App :
     protected open fun isDisposedRxExceptionsReported(): Boolean = false
 
     companion object {
-        const val PACKAGE_NAME: String = BuildConfig.APPLICATION_ID
+        @JvmField
+        val PACKAGE_NAME: String = BuildConfig.APPLICATION_ID
         private val TAG = App::class.java.toString()
 
         @JvmStatic
